@@ -107,14 +107,18 @@ img {
 }
 
 .hero {
-  padding: 94px 0 72px;
+  padding: 94px 0 28px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
+}
+
+main > .hero + .section {
+  padding-top: 24px;
 }
 
 .badge {
@@ -224,7 +228,7 @@ p {
 }
 
 .section {
-  padding: 72px 0;
+  padding: 48px 0 32px;
 }
 
 .section h2 {
@@ -234,8 +238,22 @@ p {
 }
 
 .section-top {
-  max-width: 76ch;
   margin-bottom: 1.9rem;
+}
+
+.about-lede {
+  margin-bottom: 1.9rem;
+}
+
+.about-lede-body {
+  margin-top: 0.85rem;
+  max-width: none;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.about-lede-body p + p {
+  margin-top: 1rem;
 }
 
 .grid {
@@ -300,6 +318,15 @@ p {
 .list li::before {
   content: "• ";
   color: var(--accent-dark);
+}
+
+.help-bullets {
+  gap: 0.95rem;
+  margin-top: 0;
+}
+
+.help-bullets li {
+  line-height: 1.65;
 }
 
 .quote-strip {
@@ -401,7 +428,7 @@ textarea {
   border-top: 1px solid var(--border);
   background: linear-gradient(120deg, #f3faff, #eefaf5);
   padding: 1.22rem 0;
-  margin-top: 34px;
+  margin-top: 20px;
 }
 
 .footer-wrap {

@@ -5,6 +5,412 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MnV Consulting LLP | Services</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .services-hero {
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      main.section > .container {
+        width: min(1600px, 96vw);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .service-card {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: 1fr auto;
+        overflow: hidden;
+        border: 1px solid rgba(16, 24, 40, 0.08);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        min-height: 0;
+      }
+
+      .service-card:hover,
+      .service-card:focus-within {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+      }
+
+      .service-media {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 140px;
+        object-fit: cover;
+        background: #f2f4f7;
+        grid-column: 1;
+        grid-row: 1 / -1;
+        align-self: stretch;
+      }
+
+      .service-body {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0.85rem 1rem;
+        min-height: 0;
+      }
+
+      .service-title {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.14rem, 1.35vw, 1.32rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.22;
+        color: var(--primary-dark);
+      }
+
+      .service-summary {
+        margin: 0;
+        color: #475467;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        max-width: 42ch;
+      }
+
+      .service-toggle {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: center;
+        width: auto;
+        margin: 0 0 0.85rem;
+        border: 0;
+        background: transparent;
+        color: var(--primary-dark);
+        font-weight: 600;
+        padding: 0.5rem 0.75rem;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: rgba(47, 127, 214, 0.35);
+        text-underline-offset: 0.2em;
+      }
+
+      .service-toggle:hover,
+      .service-toggle:focus-visible {
+        color: var(--accent-dark);
+        text-decoration-color: var(--accent-dark);
+      }
+
+      .service-toggle:focus-visible {
+        outline: 2px solid rgba(47, 127, 214, 0.45);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+
+      .service-points {
+        display: none;
+      }
+
+      .service-modal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        z-index: 300;
+        background: rgba(21, 34, 52, 0.48);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+      }
+
+      .service-modal.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .service-modal-dialog {
+        width: min(840px, 94vw);
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: linear-gradient(165deg, #ffffff 0%, #f5faff 55%, #f4fbf8 100%);
+        border-radius: 20px;
+        border: 1px solid rgba(47, 127, 214, 0.2);
+        box-shadow:
+          0 25px 50px -12px rgba(31, 66, 108, 0.38),
+          0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        transform: translateY(18px) scale(0.96);
+        opacity: 0;
+        transition:
+          transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.35s ease;
+      }
+
+      .service-modal.open .service-modal-dialog {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      .service-modal-accent {
+        height: 4px;
+        flex-shrink: 0;
+        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 55%, #35b58d 100%);
+      }
+
+      .service-modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.25rem 1rem 1.35rem;
+        background: linear-gradient(135deg, rgba(234, 243, 255, 0.85), rgba(234, 250, 245, 0.65));
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      .service-modal-head h3 {
+        margin: 0;
+        font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+        font-weight: 700;
+        color: var(--primary-dark);
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
+
+      .service-modal-close {
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(47, 127, 214, 0.22);
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
+        font-size: 1.35rem;
+        line-height: 1;
+        color: var(--primary-dark);
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .service-modal-close:hover {
+        background: #fff;
+        transform: scale(1.04);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .service-modal-body {
+        padding: 1.2rem 1.35rem 1.45rem;
+        overflow-y: auto;
+        max-height: min(72vh, calc(90vh - 120px));
+        scrollbar-gutter: stable;
+      }
+
+      .service-modal-body::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .service-modal-body::-webkit-scrollbar-thumb {
+        background: rgba(47, 127, 214, 0.28);
+        border-radius: 8px;
+      }
+
+      .service-modal-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .service-modal-body .service-modal-prose p {
+        margin: 0 0 0.85rem;
+        color: #38546b;
+        line-height: 1.72;
+        font-size: 0.96rem;
+      }
+
+      .service-modal-body .service-modal-prose--md > p:first-of-type {
+        font-size: 1.04rem;
+        color: #2f4b62;
+        line-height: 1.68;
+      }
+
+      .service-modal-body .service-modal-prose .service-modal-h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 1.35rem 0 0.65rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--primary-dark);
+        line-height: 1.35;
+      }
+
+      .service-modal-body .service-modal-prose .service-modal-h4:first-child {
+        margin-top: 0;
+      }
+
+      .service-modal-body .service-modal-prose .service-modal-h4::before {
+        content: "";
+        width: 4px;
+        min-height: 1.05em;
+        border-radius: 3px;
+        background: linear-gradient(180deg, var(--primary), var(--accent));
+        flex-shrink: 0;
+      }
+
+      .service-modal-body .service-modal-prose ul,
+      .service-modal-body .service-modal-prose ol {
+        margin: 0 0 1rem;
+        padding: 0.35rem 0 0.35rem 0.15rem;
+        list-style: none;
+        color: #38546b;
+      }
+
+      .service-modal-body .service-modal-prose ul li,
+      .service-modal-body .service-modal-prose ol li {
+        position: relative;
+        margin-bottom: 0.5rem;
+        padding-left: 1.15rem;
+        font-size: 0.94rem;
+        line-height: 1.62;
+      }
+
+      .service-modal-body .service-modal-prose ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+      }
+
+      .service-modal-body .service-modal-prose ol {
+        counter-reset: modal-ol;
+      }
+
+      .service-modal-body .service-modal-prose ol li {
+        counter-increment: modal-ol;
+        padding-left: 1.35rem;
+      }
+
+      .service-modal-body .service-modal-prose ol li::before {
+        content: counter(modal-ol) ".";
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        font-size: 0.82rem;
+        color: var(--accent-dark);
+      }
+
+      .service-modal-table-wrap {
+        overflow-x: auto;
+        margin: 0.85rem 0 1.1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(197, 221, 235, 0.95);
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .service-modal-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8rem;
+      }
+
+      .service-modal-table th,
+      .service-modal-table td {
+        border-bottom: 1px solid rgba(197, 221, 235, 0.85);
+        padding: 0.55rem 0.65rem;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      .service-modal-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .service-modal-table th {
+        background: linear-gradient(135deg, #eaf3ff, #eafaf5);
+        font-weight: 700;
+        color: var(--primary-dark);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .service-modal-table td strong {
+        color: var(--primary-dark);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .service-modal,
+        .service-modal-dialog {
+          transition-duration: 0.01ms;
+        }
+
+        .service-modal-dialog {
+          transform: none;
+        }
+
+        .service-modal.open .service-modal-dialog {
+          transform: none;
+        }
+      }
+
+      @media (max-width: 920px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-card {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr auto;
+        }
+
+        .service-media,
+        .service-body,
+        .service-toggle,
+        .service-points {
+          grid-column: 1;
+        }
+
+        .service-media {
+          grid-row: 1 / 2;
+          min-height: 180px;
+          height: 200px;
+        }
+
+        .service-body {
+          grid-row: 2;
+        }
+
+        .service-toggle {
+          grid-row: 3;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -23,89 +429,180 @@
 
     <main class="section">
       <div class="container">
-        <div class="section-top fade-in">
+        <div class="section-top fade-in services-hero">
           <h2>Our Core Services</h2>
           <p>
-            Comprehensive financial, tax and compliance services tailored for startups, SMEs,
-            professionals and established enterprises.
+            Comprehensive financial, tax and compliance services tailored for startups, SMEs, professionals and established enterprises.
           </p>
         </div>
-        <div class="grid cards-2">
-          <article class="card fade-in">
-            <h3>1) Accounting and Bookkeeping Services</h3>
-            <ul class="list">
+        <div class="services-grid">
+          <article class="service-card fade-in">
+            <img
+              class="service-media"
+              src="assets/services/acounting-and-bookkeeping.jpg"
+              alt="Accounting and bookkeeping services"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Accounting and Bookkeeping Services</h3>
+              <p class="service-summary">Accurate books, clean reports, and finance-ready records.</p>
+            </div>
+            <button class="service-toggle" type="button" data-service="accounting">Show more</button>
+            <ul class="service-points">
               <li>Bookkeeping, journal, ledger and reconciliations</li>
               <li>P&L, balance sheet and cash flow statements</li>
               <li>MIS reporting, adjustments and compliance-ready records</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>2) Audit and Assurance Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img
+              class="service-media"
+              src="assets/services/audit-and-assurance.jpg"
+              alt="Audit and assurance services"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Audit and Assurance Services</h3>
+              <p class="service-summary">
+                Structured audits and risk checks that strengthen confidence.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="audit">Show more</button>
+            <ul class="service-points">
               <li>Statutory, internal and tax audit support</li>
               <li>Risk controls and process improvement reviews</li>
               <li>Professional documentation as per applicable standards</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>3) Company and LLP Incorporation Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img
+              class="service-media"
+              src="assets/services/company-and-llp-incorporation.png"
+              alt="Company and LLP incorporation services"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Company and LLP Incorporation Services</h3>
+              <p class="service-summary">
+                End-to-end setup support from structure planning to filing.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="incorporation">Show more</button>
+            <ul class="service-points">
               <li>Business structure consultation and name reservation</li>
               <li>DSC, DIN and ROC filing assistance</li>
               <li>Post-incorporation compliance support</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>4) Virtual CFO Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img class="service-media" src="assets/services/virtual-cfo.png" alt="Virtual CFO services" />
+            <div class="service-body">
+              <h3 class="service-title">Virtual CFO Services</h3>
+              <p class="service-summary">
+                Strategic finance leadership without the full-time overhead.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="virtual-cfo">Show more</button>
+            <ul class="service-points">
               <li>Strategic planning, budgeting and financial insights</li>
               <li>KPI monitoring and investor-ready reporting</li>
               <li>Cost-effective financial leadership for growth</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>5) GST Review Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img class="service-media" src="assets/services/gst-review.png" alt="GST review services" />
+            <div class="service-body">
+              <h3 class="service-title">GST Review Services</h3>
+              <p class="service-summary">
+                Identify gaps early with transaction-level GST health checks.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="gst-review">Show more</button>
+            <ul class="service-points">
               <li>Return and transaction-level compliance reviews</li>
               <li>ITC checks, reconciliations and risk detection</li>
               <li>Corrective action and process improvement recommendations</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>6) GST Regular Compliance Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img
+              class="service-media"
+              src="assets/services/gst-regular-compliance.jpg"
+              alt="GST regular compliance services"
+            />
+            <div class="service-body">
+              <h3 class="service-title">GST Regular Compliance Services</h3>
+              <p class="service-summary">
+                Consistent filing, reconciliations, and advisory for lower risk.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="gst-compliance">Show more</button>
+            <ul class="service-points">
               <li>Registration, amendments, filing and reconciliations</li>
               <li>RCM compliance, litigation support and appeals</li>
               <li>Advisory to reduce tax risks and notices</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>7) Income Tax Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img class="service-media" src="assets/services/income-tax.jpg" alt="Income tax services" />
+            <div class="service-body">
+              <h3 class="service-title">Income Tax Services</h3>
+              <p class="service-summary">
+                Filing, advisory, and representation support for smoother outcomes.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="income-tax">Show more</button>
+            <ul class="service-points">
               <li>ITR filing, tax audit and advisory services</li>
               <li>Notices support and representation assistance</li>
               <li>Planning support for tax-efficient outcomes</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>8) Payroll and Labour Compliance Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img
+              class="service-media"
+              src="assets/services/payroll-and-labour-compliance.png"
+              alt="Payroll and labour compliance services"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Payroll and Labour Compliance Services</h3>
+              <p class="service-summary">
+                Reliable payroll processing with complete labour law alignment.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="payroll">Show more</button>
+            <ul class="service-points">
               <li>Payroll processing, PF, ESI and statutory compliance</li>
               <li>Registers, returns and labour filing support</li>
               <li>Inspection and notice handling assistance</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>9) Company Secretarial Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img
+              class="service-media"
+              src="assets/services/company-secretarial.jpg"
+              alt="Company secretarial services"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Company Secretarial Services</h3>
+              <p class="service-summary">
+                Governance, filings, and board compliance handled with precision.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="secretarial">Show more</button>
+            <ul class="service-points">
               <li>ROC filings, board records and governance support</li>
               <li>Shareholding and director change compliance</li>
               <li>Regulatory advisory for smooth operations</li>
             </ul>
           </article>
-          <article class="card fade-in">
-            <h3>10) Allied Services</h3>
-            <ul class="list">
+          <article class="service-card fade-in">
+            <img class="service-media" src="assets/services/allied-services.jpg" alt="Allied services" />
+            <div class="service-body">
+              <h3 class="service-title">Allied Services</h3>
+              <p class="service-summary">
+                Supporting registrations and legal essentials under one roof.
+              </p>
+            </div>
+            <button class="service-toggle" type="button" data-service="allied">Show more</button>
+            <ul class="service-points">
               <li>Trademark, patent and copyright support</li>
               <li>Trade, food and labour license assistance</li>
               <li>End-to-end documentation and advisory</li>
@@ -114,6 +611,16 @@
         </div>
       </div>
     </main>
+    <div class="service-modal" id="service-modal" aria-hidden="true">
+      <div class="service-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+        <div class="service-modal-accent"></div>
+        <div class="service-modal-head">
+          <h3 id="service-modal-title"></h3>
+          <button class="service-modal-close" type="button" id="service-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="service-modal-body" id="service-modal-body"></div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-wrap">
@@ -122,5 +629,57 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="service-modal-content.js"></script>
+    <script src="service-modal.js"></script>
+    <script>
+      const serviceToggles = document.querySelectorAll(".service-toggle");
+      const serviceModal = document.getElementById("service-modal");
+      const serviceModalTitle = document.getElementById("service-modal-title");
+      const serviceModalBody = document.getElementById("service-modal-body");
+      const serviceModalClose = document.getElementById("service-modal-close");
+
+      const serviceTitles = {
+        accounting: "Accounting and Bookkeeping Services",
+        audit: "Audit and Assurance Services",
+        incorporation: "Company and LLP Incorporation Services",
+        "virtual-cfo": "Virtual CFO Services",
+        "gst-review": "Goods and Service Tax Review Services",
+        "gst-compliance": "Goods and Service Tax – Regular Compliance Services",
+        "income-tax": "Income Tax Services",
+        payroll: "Payroll and Labour Compliance Services",
+        secretarial: "Company Secretarial Services",
+        allied: "Allied Services"
+      };
+
+      const openModal = async (serviceKey) => {
+        serviceModalTitle.textContent = serviceTitles[serviceKey] || "";
+        serviceModalBody.innerHTML = '<div class="service-modal-loading">Loading…</div>';
+        serviceModalBody.scrollTop = 0;
+        serviceModal.classList.add("open");
+        serviceModal.setAttribute("aria-hidden", "false");
+        const html = await window.__loadServiceModalHtml(serviceKey);
+        if (serviceModal.classList.contains("open")) {
+          serviceModalBody.innerHTML = html;
+          serviceModalBody.scrollTop = 0;
+        }
+      };
+
+      const closeModal = () => {
+        serviceModal.classList.remove("open");
+        serviceModal.setAttribute("aria-hidden", "true");
+      };
+
+      serviceToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => openModal(toggle.dataset.service));
+      });
+
+      serviceModalClose.addEventListener("click", closeModal);
+      serviceModal.addEventListener("click", (event) => {
+        if (event.target === serviceModal) closeModal();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && serviceModal.classList.contains("open")) closeModal();
+      });
+    </script>
   </body>
 </html>
