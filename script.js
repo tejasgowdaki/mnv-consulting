@@ -103,6 +103,19 @@ startQuoteRotation("quote-strip-services-text", "quote-strip-services-author", q
 
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
+  const serviceField = contactForm.querySelector("#service");
+  if (serviceField) {
+    const selectedService = new URLSearchParams(window.location.search).get("service");
+    if (selectedService) {
+      const matchingOption = Array.from(serviceField.options).find(
+        (option) => option.value === selectedService
+      );
+      if (matchingOption) {
+        serviceField.value = selectedService;
+      }
+    }
+  }
+
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const button = contactForm.querySelector("button[type='submit']");

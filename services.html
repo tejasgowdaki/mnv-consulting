@@ -185,6 +185,11 @@
         flex-shrink: 0;
       }
 
+      .service-modal-head-left {
+        min-width: 0;
+        flex: 1;
+      }
+
       .service-modal-head h3 {
         margin: 0;
         font-size: clamp(1.08rem, 2.2vw, 1.32rem);
@@ -192,6 +197,37 @@
         color: var(--primary-dark);
         letter-spacing: -0.02em;
         line-height: 1.25;
+      }
+
+      .service-modal-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.62rem 0.95rem;
+        border-radius: 10px;
+        border: 1px solid rgba(47, 127, 214, 0.4);
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        box-shadow: 0 10px 22px -14px rgba(31, 66, 108, 0.95);
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      }
+
+      .service-modal-contact:hover,
+      .service-modal-contact:focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 26px -14px rgba(31, 66, 108, 0.9);
+        opacity: 0.98;
+      }
+
+      .service-modal-head-actions {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
       }
 
       .service-modal-close {
@@ -308,6 +344,20 @@
         height: 6px;
         border-radius: 50%;
         background: linear-gradient(135deg, var(--primary), var(--accent));
+      }
+
+      .service-modal-body .service-modal-prose .service-modal-jump {
+        color: var(--accent-dark);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: rgba(47, 127, 214, 0.45);
+        text-underline-offset: 0.18em;
+      }
+
+      .service-modal-body .service-modal-prose .service-modal-jump:hover,
+      .service-modal-body .service-modal-prose .service-modal-jump:focus-visible {
+        color: var(--primary-dark);
+        text-decoration-color: var(--primary-dark);
       }
 
       .service-modal-body .service-modal-prose ol {
@@ -659,8 +709,13 @@
       <div class="service-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
         <div class="service-modal-accent"></div>
         <div class="service-modal-head">
-          <h3 id="service-modal-title"></h3>
-          <button class="service-modal-close" type="button" id="service-modal-close" aria-label="Close">&times;</button>
+          <div class="service-modal-head-left">
+            <h3 id="service-modal-title"></h3>
+          </div>
+          <div class="service-modal-head-actions">
+            <a class="service-modal-contact" id="service-modal-contact" href="contact.html">Contact Us</a>
+            <button class="service-modal-close" type="button" id="service-modal-close" aria-label="Close">&times;</button>
+          </div>
         </div>
         <div class="service-modal-body" id="service-modal-body"></div>
       </div>
@@ -681,6 +736,7 @@
       const serviceModalTitle = document.getElementById("service-modal-title");
       const serviceModalBody = document.getElementById("service-modal-body");
       const serviceModalClose = document.getElementById("service-modal-close");
+      const serviceModalContact = document.getElementById("service-modal-contact");
 
       const serviceTitles = {
         accounting: "Accounting and Bookkeeping Services",
@@ -695,8 +751,24 @@
         allied: "Allied Services"
       };
 
+      const contactServiceNames = {
+        accounting: "Accounting and Bookkeeping",
+        audit: "Audit and Assurance",
+        incorporation: "Company and LLP Incorporation",
+        "virtual-cfo": "Virtual CFO",
+        "gst-review": "GST Review",
+        "gst-compliance": "GST Regular Compliance",
+        "income-tax": "Income Tax Services",
+        payroll: "Payroll and Labour Compliance",
+        secretarial: "Company Secretarial Services",
+        allied: "Allied Services"
+      };
+
       const openModal = async (serviceKey) => {
         serviceModalTitle.textContent = serviceTitles[serviceKey] || "";
+        const selectedService = contactServiceNames[serviceKey] || "";
+        const serviceQuery = selectedService ? `?service=${encodeURIComponent(selectedService)}` : "";
+        serviceModalContact.href = `contact.html${serviceQuery}`;
         serviceModalBody.innerHTML = '<div class="service-modal-loading">Loading…</div>';
         serviceModalBody.scrollTop = 0;
         serviceModal.classList.add("open");
@@ -704,6 +776,97 @@
         const html = await window.__loadServiceModalHtml(serviceKey);
         if (serviceModal.classList.contains("open")) {
           serviceModalBody.innerHTML = html;
+          const modalJumpConfigs = {
+            incorporation: {
+              sectionFinders: {
+                "incorporation-company-section": /Company Incorporation Services/i,
+                "incorporation-llp-section": /LLP Incorporation Services/i,
+                "incorporation-company-vs-llp-section": /Company Vs\.\s*Limited Liability/i
+              },
+              navTargets: {
+                Company: "incorporation-company-section",
+                LLP: "incorporation-llp-section",
+                "Company Vs. LLP – which one to choose?": "incorporation-company-vs-llp-section"
+              }
+            },
+            "gst-compliance": {
+              sectionFinders: {
+                "gst-litigation-section": /GST Litigation:/i,
+                "gst-regular-compliance-section": /Other GST Regular Compliance:/i
+              },
+              navTargets: {
+                "GST Litigation Services": "gst-litigation-section",
+                "Other GST Regular Compliance Services": "gst-regular-compliance-section"
+              }
+            },
+            "income-tax": {
+              sectionFinders: {
+                "income-tax-returns-section": /Income Tax Returns:/i,
+                "income-tax-audits-section": /Income Tax Audits:/i,
+                "income-tax-advisory-section": /Income Tax Advisory:/i
+              },
+              navTargets: {
+                "Income Tax Return Services": "income-tax-returns-section",
+                "Income Tax Audits Services": "income-tax-audits-section",
+                "Income Tax Advisory Services": "income-tax-advisory-section"
+              }
+            },
+            allied: {
+              sectionElementSelector: "h4, p",
+              sectionFinders: {
+                "allied-trademark-section": /^Trademark Services(:)?$/i,
+                "allied-patent-section": /^Patent Services(:)?$/i,
+                "allied-copyright-section": /^Copyright Services(:)?$/i,
+                "allied-trade-license-section": /^Trade License(:)?$/i,
+                "allied-food-license-section": /^Food License \(FSSAI License\) Services(:)?$/i,
+                "allied-labour-license-section": /^Labour License Services(:)?$/i
+              },
+              navTargets: {
+                "Trademark Services": "allied-trademark-section",
+                "Patent Services": "allied-patent-section",
+                "Copyright Services": "allied-copyright-section",
+                "Trade license Services": "allied-trade-license-section",
+                "Food license Services": "allied-food-license-section",
+                "Labour license Services": "allied-labour-license-section"
+              },
+              navListSelector: ".service-modal-prose > ul:first-of-type > li"
+            }
+          };
+
+          const jumpConfig = modalJumpConfigs[serviceKey];
+          if (jumpConfig) {
+            const sectionSelector = jumpConfig.sectionElementSelector || "li, h4, p";
+            const modalElements = Array.from(serviceModalBody.querySelectorAll(sectionSelector));
+            Object.entries(jumpConfig.sectionFinders).forEach(([sectionId, pattern]) => {
+              const target = modalElements.find((el) => pattern.test(el.textContent || ""));
+              if (target) target.id = sectionId;
+            });
+
+            const navFromStrong = Array.from(serviceModalBody.querySelectorAll("li strong"));
+            navFromStrong.forEach((strongEl) => {
+              const text = (strongEl.textContent || "").trim();
+              const sectionId =
+                jumpConfig.navTargets[text] ||
+                Object.entries(jumpConfig.navTargets).find(([label]) => text.startsWith(label))?.[1];
+              if (!sectionId) return;
+              strongEl.innerHTML = `<a href="#${sectionId}" class="service-modal-jump" data-modal-scroll="${sectionId}">${text}</a>`;
+            });
+
+            if (jumpConfig.navListSelector) {
+              Array.from(serviceModalBody.querySelectorAll(jumpConfig.navListSelector)).forEach((liEl) => {
+                const raw = (liEl.textContent || "").trim();
+                const text = raw.replace(/:\s*$/, "");
+                const sectionId =
+                  jumpConfig.navTargets[raw] ||
+                  jumpConfig.navTargets[text] ||
+                  Object.entries(jumpConfig.navTargets).find(
+                    ([label]) => raw.startsWith(label) || text.startsWith(label)
+                  )?.[1];
+                if (!sectionId) return;
+                liEl.innerHTML = `<a href="#${sectionId}" class="service-modal-jump" data-modal-scroll="${sectionId}">${raw}</a>`;
+              });
+            }
+          }
           serviceModalBody.scrollTop = 0;
         }
       };
@@ -723,6 +886,20 @@
       });
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && serviceModal.classList.contains("open")) closeModal();
+      });
+      serviceModalBody.addEventListener("click", (event) => {
+        const jumpLink = event.target.closest("[data-modal-scroll]");
+        if (!jumpLink) return;
+        event.preventDefault();
+        const sectionId = jumpLink.getAttribute("data-modal-scroll");
+        const target = sectionId ? serviceModalBody.querySelector(`#${sectionId}`) : null;
+        if (!target) return;
+        const top =
+          target.getBoundingClientRect().top -
+          serviceModalBody.getBoundingClientRect().top +
+          serviceModalBody.scrollTop -
+          12;
+        serviceModalBody.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
       });
     </script>
   </body>

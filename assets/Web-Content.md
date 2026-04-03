@@ -439,7 +439,25 @@ At MnV Consulting LLP, we provide structured and legally compliant GST Review Se
 * **Other GST Regular Compliance Services**
 
 
-* **Other GST Regular Compliance Services**
+* **GST Litigation:**
+
+GST litigation refers to the process of handling legal disputes and proceedings between taxpayers and GST authorities under the provisions of the Central Goods and Services Tax Act, 2017 (CGST Act), State Goods and Services Tax Acts (SGST Acts), and the Integrated Goods and Services Tax Act, 2017 (IGST Act).
+
+**How MnV Consulting LLP can help you:**  
+At MnV Consulting LLP, we provide professional GST litigation support to help businesses manage disputes effectively, respond to regulatory actions, and safeguard their legitimate tax positions. Our team assists clients throughout the litigation process, from analyzing notices to representing them before GST authorities.
+
+**Below are the key ways in which MnV Consulting LLP supports businesses in GST litigation matters:**
+
+* Detailed Review and Analysis of GST Notices  
+* Preparation and Submission of Professional Replies  
+* Representation before GST Authorities  
+* Assistance in GST Appeals  
+* Handling Input Tax Credit (ITC) Disputes  
+* Advisory for Preventing Future GST Disputes  
+* Strategic Guidance for Managing GST Risks
+
+
+* **Other GST Regular Compliance:**
 
 Goods and Services Tax (GST) compliance is an essential statutory requirement for businesses registered under the GST regime in India. The GST framework established under the Central Goods and Services Tax Act, 2017 (CGST Act), State Goods and Services Tax Acts (SGST Acts), and Integrated Goods and Services Tax Act, 2017 (IGST Act) requires businesses to maintain accurate records, issue proper tax invoices, file periodic GST returns, and ensure timely payment of taxes.
 
@@ -479,22 +497,6 @@ GST compliance involves multiple statutory responsibilities such as registration
 * GST Advisory and Transaction Support
 
 
-* **GST Litigation Services:**
-
-GST litigation refers to the process of handling legal disputes and proceedings between taxpayers and GST authorities under the provisions of the Central Goods and Services Tax Act, 2017 (CGST Act), State Goods and Services Tax Acts (SGST Acts), and the Integrated Goods and Services Tax Act, 2017 (IGST Act).
-
-**How MnV Consulting LLP can help you:**  
-At MnV Consulting LLP, we provide professional GST litigation support to help businesses manage disputes effectively, respond to regulatory actions, and safeguard their legitimate tax positions. Our team assists clients throughout the litigation process, from analyzing notices to representing them before GST authorities.
-
-**Below are the key ways in which MnV Consulting LLP supports businesses in GST litigation matters:**
-
-* Detailed Review and Analysis of GST Notices  
-* Preparation and Submission of Professional Replies  
-* Representation before GST Authorities  
-* Assistance in GST Appeals  
-* Handling Input Tax Credit (ITC) Disputes  
-* Advisory for Preventing Future GST Disputes  
-* Strategic Guidance for Managing GST Risks
 
 
   
@@ -586,7 +588,7 @@ Our strengths include:
 
 
 
-* **Income Tax Audits Services:**
+* **Income Tax Audits:**
 
 Income Tax Audit refers to the examination and verification of the financial records of a taxpayer to ensure that income, deductions, and tax liabilities are correctly reported in accordance with the provisions of the Income-tax Act, 1961\. The objective of a tax audit is to ensure transparency in financial reporting and compliance with tax laws. Under Section 44AB of the Income-tax Act, certain businesses and professionals are required to get their accounts audited by a qualified Chartered Accountant when their turnover or gross receipts exceed the prescribed limits.
 
@@ -615,7 +617,7 @@ Businesses trust MnV Consulting LLP for income tax audit services because of our
     
     
     
-* **Income Tax Advisory Services**
+* **Income Tax Advisory:**
 
 Income Tax Advisory Services involve professional guidance and strategic planning to help individuals and businesses manage their tax obligations efficiently while complying with the provisions of the Income-tax Act, 1961\. At MnV Consulting LLP, we provide expert advisory services to ensure clients minimize tax liability, remain compliant with regulations, and make informed financial decisions.
 
@@ -789,7 +791,8 @@ Our copyright services are designed to help creators safeguard their rights, pre
 * We assist in transferring copyright ownership through legally valid assignment agreements.  
 * We provide professional guidance and support in protecting copyrighted works from unauthorized use and infringement.
 
-**Trade License:** A Trade License is an official authorization issued by the local municipal authority that permits a business to carry out specific commercial activities within a particular jurisdiction. It ensures that businesses operate in compliance with local regulations and maintain standards related to public health, safety, and hygiene. Trade licenses are generally issued by municipal bodies under the provisions of the Municipal Corporation Act or relevant local municipal regulations applicable in the respective state or city. Obtaining a trade license is mandatory for many types of businesses such as shops, restaurants, manufacturing units, warehouses, and service establishments.
+**Trade License:** 
+A Trade License is an official authorization issued by the local municipal authority that permits a business to carry out specific commercial activities within a particular jurisdiction. It ensures that businesses operate in compliance with local regulations and maintain standards related to public health, safety, and hygiene. Trade licenses are generally issued by municipal bodies under the provisions of the Municipal Corporation Act or relevant local municipal regulations applicable in the respective state or city. Obtaining a trade license is mandatory for many types of businesses such as shops, restaurants, manufacturing units, warehouses, and service establishments.
 
 **How MnV Consulting LLP Can Help in Trade License Services:**  
 MnV Consulting LLP provides professional assistance to businesses in obtaining and maintaining trade licenses efficiently and in compliance with applicable municipal laws:
