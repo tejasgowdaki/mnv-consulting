@@ -37,11 +37,11 @@
           <section class="card fade-in">
             <div class="detail-item">
               <h4>Email</h4>
-              <p>hello@mnvconsulting.com</p>
+              <p>info@mnvconsulting.com</p>
             </div>
             <div class="detail-item">
               <h4>Phone</h4>
-              <p>+91 90000 00000</p>
+              <p>+91 79759 47036</p>
             </div>
             <div class="detail-item">
               <h4>Office Address</h4>
@@ -53,7 +53,11 @@
             </div>
           </section>
           <section class="card fade-in">
-            <form id="contact-form">
+            <form
+              id="contact-form"
+              action="https://script.google.com/macros/s/AKfycbzC2yalwXIdefaxGfmqjS_qF590e_GUz7reyyOx59PXCyN6tL4TXCcnmRH5ujpVToGo/exec"
+              method="POST"
+            >
               <div>
                 <label for="name">Name</label>
                 <input id="name" name="name" type="text" required />
@@ -70,12 +74,16 @@
                 <label for="service">Service Required</label>
                 <select id="service" name="service" required>
                   <option value="">Select a service</option>
-                  <option>GST Services</option>
-                  <option>Income Tax Services</option>
-                  <option>Company Registration</option>
-                  <option>LLP Registration</option>
                   <option>Accounting and Bookkeeping</option>
+                  <option>Audit and Assurance</option>
+                  <option>Company and LLP Incorporation</option>
                   <option>Virtual CFO</option>
+                  <option>GST Review</option>
+                  <option>GST Regular Compliance</option>
+                  <option>Income Tax Services</option>
+                  <option>Payroll and Labour Compliance</option>
+                  <option>Company Secretarial Services</option>
+                  <option>Allied Services</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -84,6 +92,7 @@
                 <textarea id="message" name="message" placeholder="Tell us your requirement"></textarea>
               </div>
               <button class="btn btn-primary" type="submit">Submit</button>
+              <p id="contact-form-status" aria-live="polite"></p>
             </form>
           </section>
         </div>

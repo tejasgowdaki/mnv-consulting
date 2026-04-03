@@ -103,17 +103,44 @@ startQuoteRotation("quote-strip-services-text", "quote-strip-services-author", q
 
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const button = contactForm.querySelector("button[type='submit']");
+    const status = document.getElementById("contact-form-status");
     if (!button) return;
     const originalText = button.textContent;
-    button.textContent = "Submitted";
+    if (status) {
+      status.textContent = "";
+    }
+    button.textContent = "Sending...";
     button.disabled = true;
-    setTimeout(() => {
-      button.textContent = originalText;
-      button.disabled = false;
-      contactForm.reset();
-    }, 1500);
+    try {
+      const body = new URLSearchParams(new FormData(contactForm));
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body,
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send enquiry");
+      }
+      button.textContent = "Submitted";
+      if (status) {
+        status.textContent = "Your enquiry was submitted successfully.";
+      }
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+        contactForm.reset();
+      }, 1500);
+    } catch (_error) {
+      button.textContent = "Try again";
+      if (status) {
+        status.textContent = "Unable to submit enquiry. Please try again.";
+      }
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+      }, 1500);
+    }
   });
 }
