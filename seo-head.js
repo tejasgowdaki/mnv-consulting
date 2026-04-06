@@ -109,13 +109,6 @@
     document.head.appendChild(el);
   }
 
-  function linkCanonical(href) {
-    var el = document.createElement("link");
-    el.setAttribute("rel", "canonical");
-    el.setAttribute("href", href);
-    document.head.appendChild(el);
-  }
-
   function addJsonLd(data) {
     var el = document.createElement("script");
     el.setAttribute("type", "application/ld+json");
@@ -180,7 +173,7 @@
 
   var pages = {
     index: {
-      path: "/index.html",
+      path: "/",
       title:
         "MnV Consulting LLP | Accounting, Tax, GST & Compliance — Mysuru, Bengaluru, Karnataka, India",
       description:
@@ -226,7 +219,7 @@
   var cfg = pages[pageKey];
   if (!cfg) return;
 
-  var canonical = SITE + cfg.path;
+  var canonical = SITE + (pageKey === "index" ? "" : cfg.path);
 
   document.title = cfg.title;
   metaName("description", cfg.description);
@@ -235,8 +228,6 @@
   metaName("author", "MnV Consulting LLP");
   metaName("geo.region", "IN-KA");
   metaName("geo.placename", "Karnataka, India");
-
-  linkCanonical(canonical);
 
   metaProp("og:type", pageKey === "index" ? "website" : "article");
   metaProp("og:url", canonical);
