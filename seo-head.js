@@ -19,7 +19,7 @@
       description:
         "Bookkeeping, ledgers, reconciliations, financial statements and MIS aligned with Indian accounting and tax record rules.",
       keywords:
-        "accounting services Mysuru, bookkeeping Bengaluru, books of accounts Section 44AA, GST Section 35 records, Companies Act books, LLP accounts, journal ledger, trial balance, P&L, balance sheet, Karnataka, India"
+        "accounting services Mysuru (Mysore), bookkeeping Bengaluru (Bangalore), books of accounts Section 44AA, GST Section 35 records, Companies Act books, LLP accounts, journal ledger, trial balance, P&L, balance sheet, Karnataka, India"
     },
     {
       slug: "audit",
@@ -27,7 +27,7 @@
       description:
         "Statutory audit, internal audit and tax audit support under Indian company and income tax laws.",
       keywords:
-        "statutory audit Karnataka, tax audit 44AB, internal audit Bengaluru, audit firm Mysuru, SA standards, Companies Act audit, assurance services India"
+        "statutory audit Karnataka, tax audit 44AB, internal audit Bengaluru (Bangalore), audit firm Mysuru (Mysore), SA standards, Companies Act audit, assurance services India"
     },
     {
       slug: "incorporation",
@@ -35,7 +35,7 @@
       description:
         "Private limited, OPC, public company and LLP incorporation including MCA filings, DSC, DIN and post-incorporation compliance.",
       keywords:
-        "company registration Bengaluru, LLP registration Mysuru, ROC filing, SPICe+, MOA AOA, startup incorporation Karnataka, MCA India"
+        "company registration Bengaluru (Bangalore), LLP registration Mysuru (Mysore), ROC filing, SPICe+, MOA AOA, startup incorporation Karnataka, MCA India"
     },
     {
       slug: "virtual-cfo",
@@ -43,7 +43,7 @@
       description:
         "Part-time CFO support: budgets, MIS, investor decks, compliance coordination and financial strategy for growing businesses.",
       keywords:
-        "virtual CFO Mysuru, virtual CFO Bengaluru, SME CFO Karnataka, financial planning India, MIS reporting, fundraising support"
+        "virtual CFO Mysuru, virtual CFO Bengaluru (Bangalore), SME CFO Karnataka, financial planning India, MIS reporting, fundraising support"
     },
     {
       slug: "gst-review",
@@ -51,7 +51,7 @@
       description:
         "GST health checks: returns, ITC, reconciliations, invoicing and risk review under CGST/SGST/IGST.",
       keywords:
-        "GST review Bengaluru, GST health check Mysuru, GSTR reconciliation, ITC review, GST compliance audit Karnataka, India"
+        "GST review Bengaluru (Bangalore), GST health check Mysuru (Mysore), GSTR reconciliation, ITC review, GST compliance audit Karnataka, India"
     },
     {
       slug: "gst-compliance",
@@ -59,7 +59,7 @@
       description:
         "GST registration, GSTR-1, GSTR-3B, annual returns, litigation support and ongoing GST advisory.",
       keywords:
-        "GST return filing Bengaluru, GSTR-1 GSTR-3B Mysuru, GST registration Karnataka, GST litigation India, RCM compliance"
+        "GST return filing Bengaluru (Bangalore), GSTR-1 GSTR-3B Mysuru (Mysore), GST registration Karnataka, GST litigation India, RCM compliance"
     },
     {
       slug: "income-tax",
@@ -67,7 +67,7 @@
       description:
         "ITR filing, tax audit, advance tax, TDS reconciliation, notices and income tax advisory.",
       keywords:
-        "income tax return filing Mysuru, ITR Bengaluru, tax audit 44AB, income tax consultant Karnataka, NRI tax India"
+        "income tax return filing Mysuru (Mysore), ITR Bengaluru (Bangalore), tax audit 44AB, income tax consultant Karnataka, NRI tax India"
     },
     {
       slug: "payroll",
@@ -75,7 +75,7 @@
       description:
         "Payroll processing, PF, ESI, gratuity, bonus, registers and labour law filings.",
       keywords:
-        "payroll outsourcing Bengaluru, PF ESI compliance Mysuru, labour law compliance Karnataka, payroll services India"
+        "payroll outsourcing Bengaluru (Bangalore), PF ESI compliance Mysuru (Mysore), labour law compliance Karnataka, payroll services India"
     },
     {
       slug: "secretarial",
@@ -83,7 +83,7 @@
       description:
         "ROC filings, board and AGM support, MGT-7, AOC-4, director changes and corporate governance.",
       keywords:
-        "company secretary services Bengaluru, ROC compliance Mysuru, MGT-7 AOC-4, board resolutions Karnataka, MCA secretarial India"
+        "company secretary services Bengaluru (Bangalore), ROC compliance Mysuru (Mysore), MGT-7 AOC-4, board resolutions Karnataka, MCA secretarial India"
     },
     {
       slug: "allied",
@@ -91,7 +91,7 @@
       description:
         "Trademark, patent, copyright, trade licence, FSSAI and labour licence support.",
       keywords:
-        "trademark registration Mysuru, FSSAI license Bengaluru, trade license Karnataka, patent copyright India, allied compliance"
+        "trademark registration Mysuru (Mysore), FSSAI license Bengaluru (Bangalore), trade license Karnataka, patent copyright India, allied compliance"
     }
   ];
 
@@ -122,11 +122,11 @@
       "@id": ORG_ID,
       name: "MnV Consulting LLP",
       url: SITE,
-      email: "hello@mnvconsulting.com",
-      telephone: "+91-90000-00000",
+      email: "info@mnvconsulting.com",
+      telephone: "+91-79759-47036",
       areaServed: [
-        { "@type": "City", name: "Mysuru" },
-        { "@type": "City", name: "Bengaluru" },
+        { "@type": "City", name: "Mysuru (Mysore)" },
+        { "@type": "City", name: "Bengaluru (Bangalore)" },
         { "@type": "AdministrativeArea", name: "Karnataka" },
         { "@type": "Country", name: "India" }
       ],
@@ -164,7 +164,7 @@
             name: s.name,
             description: s.description,
             provider: { "@id": ORG_ID },
-            areaServed: ["Mysuru", "Bengaluru", "Karnataka", "India"]
+            areaServed: ["Mysuru (Mysore)", "Bengaluru (Bangalore)", "Karnataka", "India"]
           }
         };
       })
@@ -185,7 +185,7 @@
       title:
         "Services | MnV Consulting LLP — Accounting, GST, Tax, Audit — Mysuru, Bengaluru & Karnataka",
       description:
-        "Full list of MnV Consulting LLP services: accounting, audit, incorporation, virtual CFO, GST review and compliance, income tax, payroll, secretarial and allied services — serving Mysuru, Bengaluru and all Karnataka, India.",
+        "Full list of MnV Consulting LLP services: accounting, audit, incorporation, virtual CFO, GST review and compliance, income tax, payroll, secretarial and allied services — serving Mysuru (Mysore), Bengaluru (Bangalore) and all Karnataka, India.",
       keywords:
         LOC_PHRASE +
         ", " +
@@ -197,7 +197,7 @@
       path: "/about-us.html",
       title: "About Us | MnV Consulting LLP — Professional Firm Karnataka & India",
       description:
-        "Learn about MnV Consulting LLP: CA, cost accountants, company secretaries and advocates delivering accounting, tax and compliance solutions across Mysuru, Bengaluru, Karnataka and India.",
+        "Learn about MnV Consulting LLP: CA, cost accountants, company secretaries and advocates delivering accounting, tax and compliance solutions across Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
       keywords: "about MnV Consulting, professional team, CA firm Mysuru Bengaluru, Karnataka consulting, " + CORE_KW
     },
     contact: {
@@ -205,7 +205,7 @@
       title: "Contact | MnV Consulting LLP — Mysuru, Bengaluru, Karnataka, India",
       description:
         "Contact MnV Consulting LLP for accounting, tax and compliance support. We serve clients in Mysuru (Mysore), Bengaluru (Bangalore), throughout Karnataka and across India.",
-      keywords: "contact MnV Consulting, CA consultation Mysuru, tax help Bengaluru, Karnataka advisory, " + CORE_KW
+      keywords: "contact MnV Consulting, CA consultation Mysuru (Mysore), tax help Bengaluru (Bangalore), Karnataka advisory, " + CORE_KW
     },
     faq: {
       path: "/faq.html",
