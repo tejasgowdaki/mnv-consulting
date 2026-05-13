@@ -1,3 +1,18 @@
+function isFormFieldNode(node) {
+  if (!node || typeof node.closest !== "function") return false;
+  return Boolean(node.closest("input, textarea, select, option"));
+}
+
+document.addEventListener("copy", (e) => {
+  if (isFormFieldNode(e.target)) return;
+  e.preventDefault();
+});
+
+document.addEventListener("cut", (e) => {
+  if (isFormFieldNode(e.target)) return;
+  e.preventDefault();
+});
+
 const navToggle = document.querySelector(".mobile-nav-btn");
 const nav = document.querySelector(".nav");
 
