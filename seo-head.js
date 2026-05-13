@@ -220,7 +220,7 @@
       description:
         "Articles and guides from MnV Consulting LLP on GST, income tax and Registrar of Companies (ROC) compliance for businesses in Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
       keywords:
-        "MnV Consulting blog, GST registration GSTR-3B guide, income tax ITR TDS notices new old regime, ROC MCA DIR-3 KYC, private limited company annual compliance LLP vs Pvt Ltd, company secretary Karnataka, " +
+        "MnV Consulting blog, GST registration GSTR-3B ITC GSTR-2B GST notice guide, income tax ITR TDS notices new old regime, ROC MCA DIR-3 KYC, private limited company annual compliance LLP vs Pvt Ltd, company secretary Karnataka, " +
         LOC_PHRASE +
         ", " +
         CORE_KW
@@ -310,6 +310,28 @@
         "Filing GST returns doesn't have to be complicated. This step-by-step guide explains the types of GST returns, who needs to file what, and the key deadlines.",
       keywords:
         "file GSTR-3B India, GSTR-1 GSTR-9, CMP-08 composition, GSTR-2B ITC, QRMP GST, GST late fee, GST return due dates, " +
+        LOC_PHRASE +
+        ", " +
+        CORE_KW
+    },
+    blogGstItc: {
+      path: "/blogs/gst/input-tax-credit-what-it-is-how-to-claim.html",
+      title: "Input Tax Credit. What It Is? How To Claim? | MnV Consulting LLP",
+      description:
+        "Input Tax Credit (ITC) is one of the most important features of GST. This guide explains what ITC is, eligibility conditions, how to claim it, and common mistakes to avoid.",
+      keywords:
+        "GST input tax credit India, GSTR-2B reconciliation, Section 17(5) blocked ITC, GSTR-3B Table 4, ITC 180 days rule, ICEGATE import IGST ITC, excess ITC penalty, " +
+        LOC_PHRASE +
+        ", " +
+        CORE_KW
+    },
+    blogGstNotice: {
+      path: "/blogs/gst/received-gst-notice-how-to-respond.html",
+      title: "Received GST Notice? How To Respond? | MnV Consulting LLP",
+      description:
+        "A GST notice can seem frightening, but it is manageable if handled correctly. This guide explains common types of GST notices, why they are issued, and how to respond effectively.",
+      keywords:
+        "GST notice India, ASMT-10 scrutiny, DRC-01 show cause, REG-03 GST registration, GSTR-3A non-filing, GST appeal pre-deposit, gst.gov.in notice reply, " +
         LOC_PHRASE +
         ", " +
         CORE_KW
@@ -518,6 +540,26 @@
       "How To File GST Returns - Step By Step",
       "Filing GST returns doesn't have to be complicated. This step-by-step guide explains the types of GST returns, who needs to file what, and the key deadlines.",
       "2026-05-20",
+      "GST"
+    );
+  }
+
+  if (pageKey === "blogGstItc") {
+    pushBlogPosting(
+      "/blogs/gst/input-tax-credit-what-it-is-how-to-claim.html",
+      "Input Tax Credit. What It Is? How To Claim?",
+      "Input Tax Credit (ITC) is one of the most important features of GST. This guide explains what ITC is, eligibility conditions, how to claim it, and common mistakes to avoid.",
+      "2026-05-26",
+      "GST"
+    );
+  }
+
+  if (pageKey === "blogGstNotice") {
+    pushBlogPosting(
+      "/blogs/gst/received-gst-notice-how-to-respond.html",
+      "Received GST Notice? How To Respond?",
+      "A GST notice can seem frightening, but it is manageable if handled correctly. This guide explains common types of GST notices, why they are issued, and how to respond effectively.",
+      "2026-05-27",
       "GST"
     );
   }
