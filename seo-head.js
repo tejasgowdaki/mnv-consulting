@@ -207,6 +207,13 @@
         "Meet the MnV Consulting LLP team: chartered accountants, compliance advisors and tax professionals delivering taxation, audit, regulatory compliance and business consulting across Karnataka and India.",
       keywords: "MnV Consulting team, chartered accountant Mysuru Bengaluru, tax professionals Karnataka, compliance advisors India, " + CORE_KW
     },
+    pricing: {
+      path: "/pricing.html",
+      title: "Pricing & Professional Fees | MnV Consulting LLP — Transparent Fees Karnataka & India",
+      description:
+        "Learn how MnV Consulting LLP structures professional fees: transparent, assignment-based pricing with no hidden charges for GST, tax, audit, incorporation and advisory services across Karnataka and India.",
+      keywords: "MnV Consulting pricing, professional fees CA firm, transparent tax consultant fees Mysuru Bengaluru, assignment-based pricing Karnataka, " + CORE_KW
+    },
     contact: {
       path: "/contact.html",
       title: "Contact | MnV Consulting LLP — Mysuru, Bengaluru, Karnataka, India",
@@ -659,6 +666,96 @@
             "@type": "Answer",
             text:
               "Contact the team by phone, email, office visit, WhatsApp, or the website contact form for a prompt response and dedicated assistance."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Do I need GST registration for my business?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "GST registration depends on the nature of your business, turnover and the type of services or goods supplied. Our team can help you determine whether GST registration is mandatory or beneficial for your business."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Can you help if I receive a GST or Income Tax notice?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Yes, we assist clients in understanding, responding to and handling GST and Income Tax notices professionally. Our team provides proper guidance and support throughout the process."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How long does company or LLP registration take?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "The timeline generally depends on document availability and government approvals. In most cases, the registration process can be completed within a few working days after submission of all required documents."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Do you provide support after business registration?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Yes, we provide complete post-registration support including GST compliance, accounting, ROC filings, taxation, payroll and other regulatory compliances required for running a business smoothly."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Can I consult your team before starting a business?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Absolutely. We help entrepreneurs understand the suitable business structure, registration requirements, taxation aspects and compliance obligations before starting their business operations."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What documents are required for company or GST registration?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "The documents required may vary depending on the type of registration. Generally, identity proof, address proof, PAN, photographs and business-related documents are required. Our team will guide you with the exact checklist."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Do you provide services only for businesses in Mysuru?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "No, we provide services to clients across different cities and states through both online and offline modes of communication and consultation."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Can small businesses and startups avail your services?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Yes, we work closely with startups, entrepreneurs and small businesses by providing practical, affordable and compliance-focused solutions suited to their requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How do you ensure timely compliance and filings?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "Our team follows a systematic compliance process with proper planning, regular follow-ups and timely execution to ensure clients meet important statutory deadlines without hassle."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What makes MNV Consulting LLP different from other firms?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "At MNV Consulting LLP, we focus on providing practical guidance, transparent communication and dependable professional support. We believe in building long-term relationships by delivering solutions with integrity, professionalism and client-focused attention."
           }
         }
       ]
