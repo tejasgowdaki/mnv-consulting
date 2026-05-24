@@ -200,6 +200,13 @@
         "Learn about MnV Consulting LLP: CA, cost accountants, company secretaries and advocates delivering accounting, tax and compliance solutions across Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
       keywords: "about MnV Consulting, professional team, CA firm Mysuru Bengaluru, Karnataka consulting, " + CORE_KW
     },
+    teams: {
+      path: "/teams.html",
+      title: "Our Team | MnV Consulting LLP — Chartered Accountants & Advisors Karnataka & India",
+      description:
+        "Meet the MnV Consulting LLP team: chartered accountants, compliance advisors and tax professionals delivering taxation, audit, regulatory compliance and business consulting across Karnataka and India.",
+      keywords: "MnV Consulting team, chartered accountant Mysuru Bengaluru, tax professionals Karnataka, compliance advisors India, " + CORE_KW
+    },
     contact: {
       path: "/contact.html",
       title: "Contact | MnV Consulting LLP — Mysuru, Bengaluru, Karnataka, India",
