@@ -578,9 +578,21 @@ p {
   margin-top: 0;
 }
 
+.team-groups {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2.75rem;
+}
+
+.team-group-title {
+  margin-bottom: 1.25rem;
+  color: var(--primary-dark);
+  font-size: 1.28rem;
+  letter-spacing: -0.01em;
+}
+
 .team-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 2rem;
 }
 
 .team-card {
@@ -606,7 +618,7 @@ p {
   margin-bottom: 0.85rem;
 }
 
-.team-card h3 {
+.team-card h4 {
   margin-bottom: 0.35rem;
   color: var(--primary-dark);
   font-size: 1.05rem;
