@@ -230,11 +230,11 @@
     },
     blogs: {
       path: "/blogs.html",
-      title: "Blogs | MnV Consulting LLP — GST, Income Tax & ROC Guides — Karnataka, India",
+      title: "Blogs | MnV Consulting LLP — GST, Income Tax, Investments & ROC Guides — Karnataka, India",
       description:
-        "Articles and guides from MnV Consulting LLP on GST, income tax and Registrar of Companies (ROC) compliance for businesses in Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
+        "Articles and guides from MnV Consulting LLP on GST, income tax, investments and Registrar of Companies (ROC) compliance for businesses in Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
       keywords:
-        "MnV Consulting blog, GST registration GSTR-3B ITC GSTR-2B GST notice guide, income tax ITR TDS notices new old regime, ROC MCA DIR-3 KYC, private limited company annual compliance LLP vs Pvt Ltd, company secretary Karnataka, " +
+        "MnV Consulting blog, GST registration GSTR-3B ITC GSTR-2B GST notice guide, income tax ITR TDS notices new old regime, Sovereign Gold Bonds SGB India, ROC MCA DIR-3 KYC, private limited company annual compliance LLP vs Pvt Ltd, company secretary Karnataka, " +
         LOC_PHRASE +
         ", " +
         CORE_KW
@@ -401,6 +401,18 @@
         "DIR-3 KYC is an annual compliance requirement for all directors with a DIN. This guide explains what it is, who must file it, the process, and what happens if you miss the deadline.",
       keywords:
         "DIR-3 KYC India, DIN KYC 30 September, MCA director KYC, DIN deactivation, DIR-3 web form, designated partner LLP KYC, late fee DIR-3, " +
+        LOC_PHRASE +
+        ", " +
+        CORE_KW
+    },
+    blogInvestmentsSgb: {
+      path: "/blogs/investments/sovereign-gold-bonds-sovereign-masterstroke-or-fiscal-time-bomb.html",
+      title:
+        "Sovereign Gold Bonds: Sovereign Masterstroke or Fiscal Time Bomb? | MnV Consulting LLP",
+      description:
+        "An in-depth analysis of India’s Sovereign Gold Bond scheme: retail investor returns, tax benefits under Section 47(viib), fiscal risks for the exchequer, and SGB vs ETF, digital and physical gold.",
+      keywords:
+        "Sovereign Gold Bonds India, SGB scheme RBI, Section 47(viib) tax exemption, gold investment India, SGB vs gold ETF, SGB maturity tax free, gold bonds fiscal impact, " +
         LOC_PHRASE +
         ", " +
         CORE_KW
@@ -625,6 +637,16 @@
       "DIR-3 KYC is an annual compliance requirement for all directors with a DIN. This guide explains what it is, who must file it, the process, and what happens if you miss the deadline.",
       "2026-05-25",
       "ROC"
+    );
+  }
+
+  if (pageKey === "blogInvestmentsSgb") {
+    pushBlogPosting(
+      "/blogs/investments/sovereign-gold-bonds-sovereign-masterstroke-or-fiscal-time-bomb.html",
+      "Sovereign Gold Bonds: Sovereign Masterstroke or Fiscal Time Bomb?",
+      "An in-depth analysis of India’s Sovereign Gold Bond scheme: retail investor returns, tax benefits under Section 47(viib), fiscal risks for the exchequer, and SGB vs ETF, digital and physical gold.",
+      "2026-05-26",
+      "Investments"
     );
   }
 
