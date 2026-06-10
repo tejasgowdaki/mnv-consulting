@@ -230,11 +230,11 @@
     },
     blogs: {
       path: "/blogs.html",
-      title: "Blogs | MnV Consulting LLP — GST, Income Tax, Investments & ROC Guides — Karnataka, India",
+      title: "Blogs | MnV Consulting LLP — GST, Income Tax, ROC & Finance Guides — Karnataka, India",
       description:
-        "Articles and guides from MnV Consulting LLP on GST, income tax, investments and Registrar of Companies (ROC) compliance for businesses in Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
+        "Articles and guides from MnV Consulting LLP on GST, income tax, Registrar of Companies (ROC) compliance and finance & wealth for businesses in Mysuru (Mysore), Bengaluru (Bangalore), Karnataka and India.",
       keywords:
-        "MnV Consulting blog, GST registration GSTR-3B ITC GSTR-2B GST notice guide, income tax ITR TDS notices new old regime, Sovereign Gold Bonds SGB India, ROC MCA DIR-3 KYC, private limited company annual compliance LLP vs Pvt Ltd, company secretary Karnataka, " +
+        "MnV Consulting blog, GST registration GSTR-3B ITC GSTR-2B GST notice guide, income tax ITR TDS notices new old regime, Sovereign Gold Bonds SGB India, finance wealth India, ROC MCA DIR-3 KYC, private limited company annual compliance LLP vs Pvt Ltd, company secretary Karnataka, " +
         LOC_PHRASE +
         ", " +
         CORE_KW
@@ -408,11 +408,11 @@
     blogInvestmentsSgb: {
       path: "/blogs/investments/sovereign-gold-bonds-sovereign-masterstroke-or-fiscal-time-bomb.html",
       title:
-        "Sovereign Gold Bonds: Sovereign Masterstroke or Fiscal Time Bomb? | MnV Consulting LLP",
+        "Sovereign Gold Bonds: Super Hit or a Fiscal Disaster? | MnV Consulting LLP",
       description:
-        "An in-depth analysis of India’s Sovereign Gold Bond scheme: retail investor returns, tax benefits under Section 47(viib), fiscal risks for the exchequer, and SGB vs ETF, digital and physical gold.",
+        "How India's Sovereign Gold Bond scheme delivered a 28.5% annual return for investors while straining the exchequer — SGB 2021-22 Series III, tax rules, G-Sec comparison, and FY 2026–27 issuance halt.",
       keywords:
-        "Sovereign Gold Bonds India, SGB scheme RBI, Section 47(viib) tax exemption, gold investment India, SGB vs gold ETF, SGB maturity tax free, gold bonds fiscal impact, " +
+        "Sovereign Gold Bonds India, SGB 28.5 percent return, SGB 2021-22 Series III, Section 47(viib) tax exemption, SGB early exit June 2026, gold import duty 15 percent, SGB vs gold ETF, " +
         LOC_PHRASE +
         ", " +
         CORE_KW
@@ -643,10 +643,10 @@
   if (pageKey === "blogInvestmentsSgb") {
     pushBlogPosting(
       "/blogs/investments/sovereign-gold-bonds-sovereign-masterstroke-or-fiscal-time-bomb.html",
-      "Sovereign Gold Bonds: Sovereign Masterstroke or Fiscal Time Bomb?",
-      "An in-depth analysis of India’s Sovereign Gold Bond scheme: retail investor returns, tax benefits under Section 47(viib), fiscal risks for the exchequer, and SGB vs ETF, digital and physical gold.",
-      "2026-05-26",
-      "Investments"
+      "Sovereign Gold Bonds: Super Hit or a Fiscal Disaster?",
+      "How India's Sovereign Gold Bond scheme delivered a 28.5% annual return for investors while straining the exchequer — SGB 2021-22 Series III, tax rules, G-Sec comparison, and FY 2026–27 issuance halt.",
+      "2026-06-08",
+      "Finance & Wealth"
     );
   }
 

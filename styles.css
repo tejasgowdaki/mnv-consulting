@@ -476,6 +476,19 @@ p {
   text-align: center;
 }
 
+.blog-article-body .blog-article-callout {
+  margin: 1.75rem 0;
+  padding: 1.15rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #c5e8d8;
+  border-left: 4px solid var(--accent);
+  background-color: #eafaf5;
+}
+
+.blog-article-body .blog-article-callout p {
+  margin: 0;
+}
+
 .blog-article-table-wrap {
   margin: 1rem 0 1.25rem;
   overflow-x: auto;
