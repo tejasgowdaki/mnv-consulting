@@ -30,7 +30,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0, rootMargin: "0px 0px -5% 0px" }
 );
 
 document.querySelectorAll(".fade-in").forEach((item) => observer.observe(item));

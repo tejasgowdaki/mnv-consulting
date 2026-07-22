@@ -295,6 +295,17 @@
         ", " +
         CORE_KW
     },
+    blogIncomeTaxRsu: {
+      path: "/blogs/income-tax/cracking-the-code-on-rsu-taxation-in-india.html",
+      title: "Cracking the Code on RSU Taxation in India | MnV Consulting LLP",
+      description:
+        "From vesting to selling — how RSUs of listed, unlisted and foreign companies are taxed for resident Indians under the Income Tax Act, 1961 and the Income Tax Act, 2025.",
+      keywords:
+        "RSU taxation India, restricted stock units tax, ESOP RSU perquisite section 17(2)(vi), RSU capital gains vesting sale, foreign RSU India tax, Income Tax Act 2025 RSU, " +
+        LOC_PHRASE +
+        ", " +
+        CORE_KW
+    },
     blogGstWhatIs: {
       path: "/blogs/gst/what-is-gst-a-beginners-guide.html",
       title: "What is GST? A Complete Beginner's Guide | MnV Consulting LLP",
@@ -536,6 +547,16 @@
       "New Tax Regime v/s Old Tax Regime – which one to choose?",
       "Confused between the new and old income tax regimes? This guide breaks down the key differences, who benefits from each, and how to decide which is right for you.",
       "2026-05-17",
+      "Income Tax"
+    );
+  }
+
+  if (pageKey === "blogIncomeTaxRsu") {
+    pushBlogPosting(
+      "/blogs/income-tax/cracking-the-code-on-rsu-taxation-in-india.html",
+      "Cracking the Code on RSU Taxation in India",
+      "From vesting to selling — how RSUs of listed, unlisted and foreign companies are taxed for resident Indians under the Income Tax Act, 1961 and the Income Tax Act, 2025.",
+      "2026-07-22",
       "Income Tax"
     );
   }
