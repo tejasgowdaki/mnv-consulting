@@ -118,6 +118,8 @@ startQuoteRotation("quote-strip-services-text", "quote-strip-services-author", q
 
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
+  const formLoadedAt = Date.now();
+  const elapsedField = contactForm.querySelector("#form-elapsed");
   const serviceField = contactForm.querySelector("#service");
   if (serviceField) {
     const selectedService = new URLSearchParams(window.location.search).get("service");
@@ -143,6 +145,9 @@ if (contactForm) {
     button.textContent = "Sending...";
     button.disabled = true;
     try {
+      if (elapsedField) {
+        elapsedField.value = String(Date.now() - formLoadedAt);
+      }
       const body = new URLSearchParams(new FormData(contactForm));
       const response = await fetch(contactForm.action, {
         method: "POST",

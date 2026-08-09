@@ -824,6 +824,14 @@ form {
   gap: 0.85rem;
 }
 
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 label {
   font-size: 0.9rem;
   color: #3b556a;
